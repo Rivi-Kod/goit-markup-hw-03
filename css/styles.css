@@ -10,6 +10,8 @@
 --accent-button-color: #188CE8;
 --footer-contact-color: rgba(255, 255, 255, 0.6);
 --card-set-gap: 30px;
+--border-header: #ECECEC;
+--border-card: #EEEEEE;
 }
 
 body {
@@ -79,6 +81,7 @@ img {
 /* =============== START site-nav =================== */
 .header-site{
   background-color: var(--primary-white-color);
+  border-bottom: 1px solid var(--border-header);
 }
 .site-nav,
 .link-nav,
@@ -206,6 +209,10 @@ img {
 }
 /* =============== END button =================== */
 /* =============== START section =================== */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .center {
   font-size: 36px;
   line-height: 1.17;
@@ -229,10 +236,6 @@ img {
   text-align: center;
 }
 
-.benefits {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .position-benefits {
   display: flex;
 }
@@ -256,10 +259,6 @@ img {
   margin-right: 30px;
 }
 
-.team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .team-title {
   margin-bottom: 50px;
 }
@@ -320,16 +319,14 @@ img {
 }
 .postion-text-card {
   padding: 20px 24px;
-}
-.style-portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  border-bottom: 1px solid var(--border-card);
 }
 /* =============== END portfolio card ==================== */
 /* =============== START footer =================== */
 .footer-site {
   background-color: var(--auxiliary-back-color);
   padding-top: 60px;
+  padding-bottom: 45px;
 }
 .address-map {
   font-style: normal;
