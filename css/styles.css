@@ -9,18 +9,9 @@
 --button-color: #F5F4FA;
 --accent-button-color: #188CE8;
 --footer-contact-color: rgba(255, 255, 255, 0.6);
+--card-set-gap: 30px;
 }
-/* Добрый день. 
-Внёс исправления единственное так и не смог разобраться с почтой и телефоном. Вы сказали поднять их специфинось но я так и не понял зачем. И не понял как они могут наследовать line-height от body если им присвоен class="link-contact", а специфичность класса уже выше чем у тега. 
-Я подумал что вас смутило растояние между почтой и номером но это отому что под стилицацию не попали Li в которох находятся ссылки на почту и номер. Я думал их не нужно стилизировать так как мы их всё равно должны будем сдвигать и они не будут друг под другом. 
-Ниже добавил клас для ul и стилизировал его расстояние между номером и почтой ушло. 
 
-Так же подскажите поалуйста нормально ли я присвоил классы? 
-Может стоит их делать более уникальными? 
-когда начал исправлять ошибки просидел 2 часа что бы понять какой клас за что отвечает что бы не продублировать лишний раз код. 
-Заметил что слишком часто встречаеться в названии классов link, logo, contact поэтому и думаю может присваивать болеее уникальные классы? Или же всё нормально и чисто с опытом смогу привыкнуть? 
-
- */
 body {
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
@@ -34,13 +25,36 @@ h2,
 h3 {
   color: var(--title-text-color);
 }
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
 
+img {
+  display: block;
+  max-width: 100%;
+}
 .list {
   list-style: none;
+  padding: 0 ;
+  margin: 0 ;
 }
 .link-card {
   text-decoration: none;
   color: inherit;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 /* =============== START Logo =================== */
@@ -57,6 +71,8 @@ h3 {
   color: var(--logo-blue-color);
 }
 .footer-site-logo {
+  display: block;
+  margin-bottom: 20px;
   color: var(--primary-white-color);
 }
 /* =============== END Logo =================== */
@@ -66,7 +82,6 @@ h3 {
 }
 .site-nav,
 .link-nav,
-/* сюда добавил контакт========================================================= */
 .contact,
 .link-contact {
   font-weight: 500;
@@ -94,13 +109,49 @@ h3 {
 .address-map:focus {
   color: var(--accent-color);
 }
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.position-nav {
+  display: flex;
+  align-items: center;
+}
+
+.position-contact {
+  display: flex;
+  align-items: center;
+}
+.contact .item + .item {
+  margin-left: 50px;
+}
+.position-site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+
+.site-nav .item + .item {
+  margin-left: 50px;
+}
+.link-nav,
+.link-contact {
+  display: block;
+  padding: 32px 0;
+}
 /* =============== END site-nav =================== */
 /* =============== START HERO =================== */
 .hero {
+  
   background-color: var(--auxiliary-back-color);
   text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -161,30 +212,124 @@ h3 {
   text-align: center;
 }
 .subtitle {
+  margin-bottom: 10px;
+
   font-size: 14px;
   line-height: 1.14;
 }
 .teamname {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  text-align: center;
+}
+.team-paragraph {
+  text-align: center;
+}
+
+.benefits {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.position-benefits {
+  display: flex;
+}
+.position-benefits .distance-benefits + .distance-benefits {
+  margin-left: 30px;
+}
+.distance-benefits {
+  width: 270px;
+}
+
+.activity {
+  padding-bottom: 94px;
+}
+.activity-title {
+  margin-bottom: 50px;
+}
+.position-activity {
+  display: flex;
+}
+.position-activity :not(:last-child) {
+  margin-right: 30px;
+}
+
+.team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.team-title {
+  margin-bottom: 50px;
+}
+.position-team {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.distanse-team {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.teame-card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+              0px 1px 1px rgba(0, 0, 0, 0.14), 
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
 }
 /* =============== END section =================== */
 /* =============== START portfolio card =================== */
 .description-card {
   font-size: 16px;
-line-height: 1.88;
+  line-height: 1.88;
 }
 .title-card {
+  
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
+.portfolio-nav{
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 34px;
+}
+.portfolio-nav .item + .item {
+  margin-left: 30px ;
+}
+.portfolio-card {
+  
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+.portfolio-card-position {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+
+}
+.postion-text-card {
+  padding: 20px 24px;
+}
+.style-portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 /* =============== END portfolio card ==================== */
 /* =============== START footer =================== */
 .footer-site {
   background-color: var(--auxiliary-back-color);
+  padding-top: 60px;
 }
 .address-map {
   font-style: normal;
@@ -198,4 +343,8 @@ line-height: 1.88;
   text-decoration: none;
   color: var(--footer-contact-color); 
 } 
+
+.address-footer .item + .item {
+  margin-top: 9px;
+}
 /* =============== END footer =================== */
