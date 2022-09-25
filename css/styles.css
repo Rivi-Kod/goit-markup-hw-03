@@ -319,12 +319,11 @@ img {
 .portfolio-nav{
   display: flex;
   justify-content: center;
+  gap: 8px;
 
   margin-bottom: 50px;
 }
-.portfolio-nav .item + .item {
-  margin-left: 8px ;
-}
+
 .portfolio-card {
   
   display: flex;
