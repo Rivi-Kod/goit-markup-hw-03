@@ -198,6 +198,8 @@ img {
 }
 
 .button-portfolio {
+  padding: 6px 22px;
+
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -208,7 +210,10 @@ img {
   background-color: var(--button-color);
   border-style: none;
 }
-
+.all {
+  padding-left: 25px;
+  padding-right: 25px;
+}
 .button-portfolio:hover,
 .button-portfolio:focus {
   background-color: var(--logo-blue-color);
@@ -318,7 +323,7 @@ img {
   margin-bottom: 50px;
 }
 .portfolio-nav .item + .item {
-  margin-left: 30px ;
+  margin-left: 8px ;
 }
 .portfolio-card {
   
